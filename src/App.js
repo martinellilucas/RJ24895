@@ -1,17 +1,14 @@
-import logo from "./logo.svg";
 import "./App.css";
-import Seccion from "./Seccion.js"
+import "./styles.css";
+import { ItemListContainer } from "./components/itemListContainer/ItemListContainer";
+import { NavBar } from "./components/NavBar/NavBar";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <h1>HOLA MUNDO !</h1>
-        <img src={logo} className="App-logo" alt="logo" />
-      </header>
-      
-      <Seccion/>
-    </div>
+    <>
+      <NavBar/>
+      <ItemListContainer greeting="Hola Coder !" />
+    </>
   );
 }
 
