@@ -1,6 +1,5 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
+.item-list-container {
+  max-width: 900px;
+  margin: 30px auto;
+  padding: 10px;
+}

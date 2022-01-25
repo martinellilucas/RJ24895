@@ -1,7 +1,8 @@
-
+import cartwidget from './cartwidget.png'
 export const CartWidget = () =>{
-
     return (
-        <img src = "src\components\NavBar\cartwidget.png" alt= "carrito" />
+        <>
+        <img src = {cartwidget} alt= "Cart widget" />
+        </>
     )
 }
