@@ -1,4 +1,4 @@
-import cartwidget from './cartwidget.png'
+import cartwidget from './cartreg.png'
 export const CartWidget = () =>{
     return (
         <>
