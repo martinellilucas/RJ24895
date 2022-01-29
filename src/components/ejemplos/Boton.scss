@@ -11,6 +11,11 @@
     font-family: sans-serif; 
     margin-top: 10px;
     margin-bottom: 10px;
-
     
+}
+
+.my-button:hover{
+
+    color: $color-principal;
+    background-color: $color-secundario;
 }

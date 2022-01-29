@@ -1,8 +1,9 @@
+import { Button } from 'react-bootstrap'
 import './Boton.scss'
 
 export const Boton = ( {children, clickear} ) => {
 
     return (
-        <button className='my-button' onClick={clickear}>{children}</button>
+        <Button className='my-button' onClick={clickear}>{children}</Button>
     )
 }
