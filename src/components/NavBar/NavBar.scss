@@ -1,0 +1,41 @@
+@import '../../styles/variables.scss';
+
+.header {
+    padding: 20px 50px;
+    width: 100%;
+    background-color: $color-principal;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    h1 {
+        color: #273036;
+        font-size: 52px;
+        font-weight: 800px;
+        font-family: sans-serif;
+    }
+
+    .header-nav {
+        display:flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-left: 900px;
+        width: 20%;
+    
+        .header-link {
+            color: $color-secundario;
+            text-transform: capitalize;
+            font-size: medium;
+            font-style: oblique;
+            cursor: pointer;
+            font-family: sans-serif;
+        }
+    }
+}
+
+
+
+
+
+
+

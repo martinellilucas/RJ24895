@@ -1,8 +1,11 @@
+@import '../../styles/variables.scss';
+
 .item-list-container {
+  align-items: center;
   max-width: 1200px;
   margin: 50px auto;
   padding: 10px;
-  color: #273036;
+  color: $color-secundario;
   font-size: large;
   font-family: sans-serif;
 }
@@ -10,5 +13,5 @@
 .hr{
   border-radius: 2px;
   width: 75%;
-  border-color: #273036;
+  border-color: $color-secundario;
 }
