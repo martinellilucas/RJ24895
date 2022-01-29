@@ -1,6 +1,5 @@
 @import '../../styles/variables.scss';
 .my-button{
-
     color: $color-secundario;
     background-color: $color-principal;
     border: none;
@@ -10,12 +9,17 @@
     text-transform: uppercase;
     font-family: sans-serif; 
     margin-top: 10px;
-    margin-bottom: 10px;
-    
+    margin-bottom: 10px;  
 }
 
 .my-button:hover{
-
     color: $color-principal;
     background-color: $color-secundario;
+    border: none;
 }
+
+.my-button:focus{
+    color: $color-principal;
+    background-color: $color-secundario;
+    border: none;
+}   
