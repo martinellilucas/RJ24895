@@ -8,11 +8,12 @@
     justify-content: space-between;
     align-items: center;
     
-    h1 {
+    .logo {
         color: #273036;
         font-size: 52px;
         font-weight: 800px;
-        font-family: Arial;
+        font-family: sans-serif;
+        text-decoration: none;
     }
 
     .header-nav {
@@ -25,11 +26,11 @@
         .header-link {
             color: $color-secundario;
             text-transform: capitalize;
+            text-decoration: none;
             font-size: medium;
             font-style: normal;
             cursor: pointer;
             font-family: sans-serif;
-            margin-top: 15px;
         }
     }
 }

@@ -1,16 +1,19 @@
+import { Link } from "react-router-dom";
 import { CartWidget } from "./CartWidget";
 import "./NavBar.scss";
 
 export const NavBar = () => {
   return (
     <header className="header">
-      <h1>ZAIDA</h1>
+      <Link className="logo" to='/'>
+        <h1>ZAIDA</h1>  
+      </Link>
       <nav className="header-nav">
-        <p className="header-link">Home</p>
-        <p className="header-link">Contacto</p>
-        <p className="header-link">Nosotros</p>
+        <Link to='/' className="header-link">Home</Link>
+        <Link to='/productos' className="header-link">Productos</Link>
+        <Link to="/contacto" className="header-link">Contacto</Link>
+        <Link to="/nosotros" className="header-link">Nosotros</Link>
       </nav>
-
       <CartWidget className="cart-widget" />
     </header>
   );

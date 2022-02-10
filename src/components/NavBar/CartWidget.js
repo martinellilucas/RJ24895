@@ -1,8 +1,10 @@
 import cartwidget from './cartreg.png'
+import { Link } from "react-router-dom";
+
 export const CartWidget = () =>{
     return (
-        <>
-        <img src = {cartwidget} alt= "Cart widget" />
-        </>
+        <Link to='/carrito'>
+        <img src={cartwidget} alt="Cart widget"/>
+        </Link>
     )
 }

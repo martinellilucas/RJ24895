@@ -1,12 +1,9 @@
-import Button from 'react-bootstrap/Button'
+import '../Item/Item.scss'
 import Card from 'react-bootstrap/Card'
-import { Link } from 'react-router-dom'
-import './Item.scss'
 
-export const Item = ( {id, nombre, precio, img, desc} ) => {
 
+export const ItemDetail = ({id, nombre, desc, precio, img, stock, categoria }) => {
     return (
-
         <Card style = {{ width: '16rem',
                          margin: '10px'      
         }}>
@@ -17,9 +14,6 @@ export const Item = ( {id, nombre, precio, img, desc} ) => {
                     {desc}
                 </Card.Text>
                 <Card.Text>Precio: ${precio}</Card.Text>
-                <Link to={`/detail/${id}`}>
-                    <Button className='my-button'>Ver más</Button>
-                </Link>
             </Card.Body>
         </Card>
     )

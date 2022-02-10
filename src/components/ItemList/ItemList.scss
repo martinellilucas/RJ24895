@@ -1,3 +1,37 @@
+@import '../../styles/variables.scss';
 
+.catalogo {
+    padding: 20px 50px;
+    width: 100%;
+    background-color: $color-principal;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    .catalogo-titulo {
+        color: #273036;
+        font-size: 32px;
+        font-weight: 800px;
+        font-family: sans-serif;
+        text-decoration: none;
+    }
 
-
+    .catalogo-nav {
+        display:flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-right: 60px;
+        width: 20%;
+    
+        .catalogo-link {
+            color: $color-secundario;
+            text-transform: capitalize;
+            text-decoration: none;
+            font-size: medium;
+            font-style: normal;
+            cursor: pointer;
+            font-family: sans-serif;
+            margin-right: 15px;
+        }
+    }
+}
