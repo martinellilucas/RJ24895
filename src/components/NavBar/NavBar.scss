@@ -12,7 +12,7 @@
         color: #273036;
         font-size: 52px;
         font-weight: 800px;
-        font-family: sans-serif;
+        font-family: Arial;
     }
 
     .header-nav {
@@ -26,9 +26,10 @@
             color: $color-secundario;
             text-transform: capitalize;
             font-size: medium;
-            font-style: oblique;
+            font-style: normal;
             cursor: pointer;
             font-family: sans-serif;
+            margin-top: 15px;
         }
     }
 }

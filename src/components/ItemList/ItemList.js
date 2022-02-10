@@ -5,10 +5,10 @@ import './ItemList.scss'
 export const ItemList = ( {productos} ) => {
     return (
         <Contenedor className = "productos">
-            <h2>Productos</h2>
+            <h2>Catálogo:</h2>
             <hr className="hr"></hr>
             <div className="row">
-                { productos.map ((el) => <Item nombre={el.nombre} {...el}/>)}
+                { productos.map ((el) => <Item nombre={el.nombre}{...el}/>)}
             </div>
         </Contenedor>
       

@@ -2,7 +2,7 @@ import Button from 'react-bootstrap/Button'
 import Card from 'react-bootstrap/Card'
 import './Item.scss'
 
-export const Item = ( {nombre, precio, img, desc} ) => {
+export const Item = ( {id, nombre, precio, img, desc} ) => {
 
     return (
 
@@ -16,7 +16,7 @@ export const Item = ( {nombre, precio, img, desc} ) => {
                     {desc}
                 </Card.Text>
                 <Card.Text>Precio: ${precio}</Card.Text>
-                <Button className='my-button'>Ver más</Button>
+                <Button className='my-button'>Agregar al carrito</Button>
             </Card.Body>
         </Card>
     )

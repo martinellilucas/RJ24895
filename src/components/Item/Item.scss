@@ -1,5 +1,6 @@
 @import '../../styles/variables.scss';
 .img {
-    margin-top: 4px;
+    max-block-size: 500px;
+    margin-top: 5px;
     background-color: $color-secundario;
 }
