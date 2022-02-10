@@ -6,7 +6,7 @@ export const NavBar = () => {
   return (
     <header className="header">
       <Link className="logo" to='/'>
-        <h1>ZAIDA</h1>  
+        <h1>ZAIDA®</h1>  
       </Link>
       <nav className="header-nav">
         <Link to='/' className="header-link">Home</Link>

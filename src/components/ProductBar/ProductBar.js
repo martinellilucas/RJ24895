@@ -23,7 +23,7 @@ export const ProductBar = () => {
           </Link>
         </nav>
       </header>
-      <hr></hr>
+      <hr/>
     </>
   );
 };

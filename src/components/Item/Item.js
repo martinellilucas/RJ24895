@@ -7,8 +7,9 @@ export const Item = ( {id, nombre, precio, img, desc} ) => {
 
     return (
 
-        <Card style = {{ width: '16rem',
-                         margin: '10px'      
+        <Card style = {{ 
+            width: '16rem',
+            margin: '10px',    
         }}>
             <Card.Img className="img" variant="top" src={img}/>
             <Card.Body>

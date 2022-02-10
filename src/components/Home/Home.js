@@ -9,9 +9,9 @@ import { ItemListContainer } from "../itemListContainer/ItemListContainer";
 export const Home = () => {
    return (
        <>
-        <img className='imagen' src={inicio3} alt='imagen'/>
+        <img className='imagen' src={inicio1} alt='imagen'/>
        <Contenedor>
-           <h2 className="titulo">Bienvenidos a Zaida indumentaria</h2>
+           <h2 className="titulo">Bienvenidos a Zaida® indumentaria.</h2>
            <hr/>
             <ItemListContainer/>
        </Contenedor>

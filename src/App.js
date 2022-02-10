@@ -19,8 +19,8 @@ function App() {
       
       <Routes>
         <Route path="/" element={<Home/>}/>
-        <Route path="/productos" element={<ItemListContainer greeting="Bienvenidos a Zaida indumentaria." />}/>
-        <Route path="/productos/:catId" element={<ItemListContainer greeting="Bienvenidos a Zaida indumentaria." />}/>
+        <Route path="/productos" element={<ItemListContainer/>}/>
+        <Route path="/productos/:catId" element={<ItemListContainer/>}/>
         <Route path="/detail/:itemId" element={<ItemDetailContainer/>}/>
         <Route path="/nosotros" element={<Nosotros/>}/>
         <Route path="/contacto" element={<Contacto/>}/>

@@ -38,7 +38,7 @@ export const ItemListContainer = ( { greeting } ) => {
 
     <section className="item-list-container">
       <h2>{greeting}</h2>
-      <hr className='hr'></hr>
+      <hr/>
       <>
       {
           loading 
