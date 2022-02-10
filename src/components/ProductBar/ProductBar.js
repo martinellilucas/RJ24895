@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-
+import './ProductBar.scss';
 
 export const ProductBar = () => {
   return (
