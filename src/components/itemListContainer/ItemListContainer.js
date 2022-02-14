@@ -13,7 +13,6 @@ export const ItemListContainer = ( { greeting } ) => {
 
   const { catId } = useParams()
 
-  console.log (catId)
 
   useEffect ( () => {
     setLoading (true)

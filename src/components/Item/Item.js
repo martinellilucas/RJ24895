@@ -3,7 +3,7 @@ import Card from 'react-bootstrap/Card'
 import { Link } from 'react-router-dom'
 import './Item.scss'
 
-export const Item = ( {id, nombre, precio, img, desc} ) => {
+export const Item = ( {id, nombre, precio, img, stock, desc} ) => {
 
     return (
 
@@ -15,7 +15,7 @@ export const Item = ( {id, nombre, precio, img, desc} ) => {
             <Card.Body>
                 <Card.Title>{nombre}</Card.Title>
                 <Card.Text>
-                    {desc}
+                     En stock: {stock}
                 </Card.Text>
                 <Card.Text>Precio: ${precio}</Card.Text>
                 <Link to={`/detail/${id}`}>

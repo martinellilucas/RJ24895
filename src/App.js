@@ -3,34 +3,39 @@ import { ItemListContainer } from "./components/itemListContainer/ItemListContai
 import { NavBar } from "./components/NavBar/NavBar";
 import { Waves } from "./components/waves/Waves.js";
 import { BrowserRouter, Routes, Route} from "react-router-dom";
-import { Nosotros } from "./components/Nosotros";
-import { Contacto } from "./components/Contacto";
-import { Carrito } from "./components/Carrito"; 
-import { Error404 } from "./components/Error404";
+import { Nosotros } from "./components/Nosotros/Nosotros";
+import { Contacto } from "./components/Contacto/Contacto";
+import { Carrito } from "./components/Cart/Carrito"; 
+import { Error404 } from "./components/Error/Error404";
 import { ItemDetailContainer } from "./components/ItemDetailContainer/ItemDetailContainer";
 import { Home } from "./components/Home/Home";
+import { CartProvider } from './components/CartContext/CartContext.js'
 
 function App() {
   return (
-   
-    <BrowserRouter>
 
-      <NavBar/>
-      
-      <Routes>
-        <Route path="/" element={<Home/>}/>
-        <Route path="/productos" element={<ItemListContainer/>}/>
-        <Route path="/productos/:catId" element={<ItemListContainer/>}/>
-        <Route path="/detail/:itemId" element={<ItemDetailContainer/>}/>
-        <Route path="/nosotros" element={<Nosotros/>}/>
-        <Route path="/contacto" element={<Contacto/>}/>
-        <Route path="/carrito" element={<Carrito/>}/>
-        <Route path="*" element={ <Error404/>}/>
-      </Routes>
+   <CartProvider>
 
-      <Waves/>
+      <BrowserRouter>
 
-    </BrowserRouter>
+        <NavBar/>
+        
+        <Routes>
+          <Route path="/" element={<Home/>}/>
+          <Route path="/productos" element={<ItemListContainer/>}/>
+          <Route path="/productos/:catId" element={<ItemListContainer/>}/>
+          <Route path="/detail/:itemId" element={<ItemDetailContainer/>}/>
+          <Route path="/nosotros" element={<Nosotros/>}/>
+          <Route path="/contacto" element={<Contacto/>}/>
+          <Route path="/carrito" element={<Carrito/>}/>
+          <Route path="*" element={ <Error404/>}/>
+        </Routes>
+
+        <Waves/>
+
+      </BrowserRouter>
+
+   </CartProvider>
     
   );
 }

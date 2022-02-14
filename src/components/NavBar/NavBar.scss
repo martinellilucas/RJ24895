@@ -34,6 +34,14 @@
         }
     }
 }
+.cantidadCart {
+    color: $color-secundario;
+    text-transform: capitalize;
+    text-decoration: none;
+    font-size: small;
+    cursor: pointer;
+    font-family: $fuente;
+}
 
 
 
