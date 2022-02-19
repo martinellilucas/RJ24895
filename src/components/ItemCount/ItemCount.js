@@ -2,19 +2,19 @@
 
 export const ItemCount = ({max, min=0, counter, setCounter}) => {
 
-    const handleSumar= () => {
+    const handleSumar = () => {
         counter < max && setCounter(counter + 1)
     }
 
-    const handleRestar= () => {
+    const handleRestar = () => {
         counter > min && setCounter(counter - 1)
     }
 
     return (
         <div> 
-            <button onClick={handleRestar} className="btn btn-outline-primary">-</button>
-            <span className="mx-3">{counter}</span>
-            <button onClick={handleSumar} className="btn btn-primary">+</button>
+            <button style={{ marginLeft:'70px' }} onClick={handleRestar} className="my-button">-</button>
+            <span className="mx-2">{counter}</span>
+            <button onClick={handleSumar} className="my-button mx-1">+</button>
         </div>
     )
 }

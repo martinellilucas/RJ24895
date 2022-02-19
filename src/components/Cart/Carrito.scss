@@ -1,0 +1,19 @@
+@import '../../styles/variables.scss';
+
+.cart-header {
+    padding: 20px 50px;
+    width: 100%;
+    background-color: $color-principal;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #273036;
+    font-size: 26px;
+    font-family: $fuente;
+    text-decoration: none;
+}
+.cart-item{
+  color: $color-secundario;
+  font-size: large;
+  font-family: $fuente;
+}

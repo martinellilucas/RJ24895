@@ -1,9 +1,12 @@
 
 import { useEffect, useState } from 'react';
 import './ItemListContainer.scss'
-import { pedirDatos } from '../../helpers/pedirDatos';
 import { ItemList} from '../ItemList/ItemList'
 import { useParams } from 'react-router-dom';
+import cargando from './cargando.gif'
+import { db } from '../../firebase/config';
+import { collection, getDocs, query, where } from 'firebase/firestore';
+
 
 
 export const ItemListContainer = ( { greeting } ) => {
@@ -15,22 +18,27 @@ export const ItemListContainer = ( { greeting } ) => {
 
 
   useEffect ( () => {
-    setLoading (true)
 
-    pedirDatos()
-        .then ( (res) => { // se toma como parametro la respuesta del resolve de la promesa
-          if (catId) {
-            setProductos ( res.filter((el) => el.categoria === catId ) )
-          } else{
-            setProductos(res)
+    setLoading (true)
+    
+    //1- armar referencia
+    
+    const productosRef = collection (db, 'productos')
+    const q = catId ? query(productosRef, where("categoria", "==", catId)) : productosRef
+    
+    //2- pedir esa referencia
+    
+    getDocs(q)
+      .then ((resp) => {
+        setProductos(resp.docs.map((doc) => {
+          return {
+            id: doc.id,
+            ...doc.data()
           }
-        })
-        .catch( (err) => {
-            console.log ("promesa rechazada")
-        })
-        .finally ( () =>{
-          setLoading(false)
-        })
+        } )) 
+      })
+      .finally (() => setLoading(false))
+
   }, [catId])
 
   return (
@@ -39,13 +47,15 @@ export const ItemListContainer = ( { greeting } ) => {
       <h2>{greeting}</h2>
       <hr/>
       <>
-      {
-          loading 
-            ? <div>
-                <h2>LOADING..</h2>
-              </div>
-            : <ItemList productos = {productos}/>
-      }
+        {
+            loading 
+              ? <div>
+                  <h2>Loading..</h2>
+                  <hr className='hr'/>
+                  <img className='cargando'src={cargando} alt='cargando'></img>
+                </div>
+              : <ItemList productos = {productos}/>
+        }
       </>
       
     </section>

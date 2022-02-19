@@ -1,0 +1,13 @@
+@import '../../styles/variables.scss';
+
+.title{
+  color: $color-secundario;
+  font-size: larger;
+  font-family: $fuente;
+}
+
+.hr{
+  border-radius: 20px;
+  width: 75%;
+  border-color: $color-secundario;
+}

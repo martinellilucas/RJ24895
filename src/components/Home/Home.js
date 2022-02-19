@@ -11,23 +11,23 @@ import { CarouselItem } from "react-bootstrap";
 export const Home = () => {
    return (
        <>
-       <Carousel interval={2500}>
-           <CarouselItem>
-                <img className='imagen' src={inicio1} alt='imagen'/>
-           </CarouselItem>
-           <CarouselItem>
-             <img className='imagen' src={inicio2} alt='imagen2'/>
-           </CarouselItem>
-           <CarouselItem>
-             <img className='imagen' src={inicio3} alt='imagen3'/>
-           </CarouselItem>
-       </Carousel>
-        
-       <Contenedor>
-           <h2 className="titulo">Bienvenidos a Zaida® indumentaria.</h2>
-           <hr/>
-            <ItemListContainer/>
-       </Contenedor>
+        <Carousel interval={2500}>
+            <CarouselItem>
+                  <img className='imagen' src={inicio1} alt='imagen'/>
+            </CarouselItem>
+            <CarouselItem>
+              <img className='imagen' src={inicio2} alt='imagen2'/>
+            </CarouselItem>
+            <CarouselItem>
+              <img className='imagen' src={inicio3} alt='imagen3'/>
+            </CarouselItem>
+        </Carousel>
+          
+        <Contenedor>
+            <h4 className="header my-5">Bienvenidos a Zaida® indumentaria.</h4>
+            <hr/>
+              <ItemListContainer/>
+        </Contenedor>
        </>
       
    )

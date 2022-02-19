@@ -29,7 +29,7 @@ export const ItemDetail = ({id, nombre, desc, precio, img, stock, categoria }) =
     return (
         <div>
 
-            <Card style = {{ width: '16rem',
+            <Card style = {{ width: '18rem',
                             marginTop: '10px',
                             marginLeft: '500px'      
             }}>
@@ -43,8 +43,10 @@ export const ItemDetail = ({id, nombre, desc, precio, img, stock, categoria }) =
                     <Card.Text>Precio: ${precio}</Card.Text>
                     {
                         isInCart (id)
-                        ? <Link to='/carrito' className='btn btn-success my-3'>
-                            Terminar compra
+                        ? <Link to='/carrito'>
+                            <button className='my-button'>
+                                Terminar compra
+                            </button>
                         </Link>
                         : <>
                             <ItemCount 
@@ -52,7 +54,7 @@ export const ItemDetail = ({id, nombre, desc, precio, img, stock, categoria }) =
                                 counter={cantidad}
                                 setCounter={setCantidad}
                             />
-                            <button onClick={handleAgregar} className='btn btn-primary my-2'>Agregar al carrito</button>
+                            <button style={{marginLeft:'35px'}} onClick={handleAgregar} className='my-button'>Agregar al carrito</button>
                           </>
                     }
                 </Card.Body>

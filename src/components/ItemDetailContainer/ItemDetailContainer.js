@@ -1,8 +1,11 @@
+import { doc,getDoc } from 'firebase/firestore';
 import React, {useEffect, useState} from 'react';
 import { useParams } from 'react-router-dom';
-import { pedirDatos } from '../../helpers/pedirDatos';
+import { db } from '../../firebase/config';
 import { ItemDetail } from '../ItemDetail/ItemDetail';
 import { ProductBar } from '../ProductBar/ProductBar';
+import './ItemDetailContainer.scss'
+
 export const ItemDetailContainer = () => {
 
     const [loading, setLoading] = useState (false)
@@ -12,14 +15,15 @@ export const ItemDetailContainer = () => {
 
     useEffect ( () => {
         setLoading(true)
-
-        pedirDatos()
-            .then((res) => {
-                setItem( res.find((el) => el.id === Number(itemId)))
+        //1-armo la referencia
+        const itemRef = doc (db,'productos', itemId)
+        //2-pido la ref al doc
+        getDoc(itemRef)
+            .then((resp)=>{
+               setItem(resp.data())
             })
-            .finally(() => {
-                setLoading (false)
-            })
+            .finally(() => setLoading(false))
+            
     }, [itemId])
 
     return (
@@ -27,7 +31,7 @@ export const ItemDetailContainer = () => {
              <ProductBar/>
             {
                 loading
-                ? <h2>Loading..</h2>
+                ? <h2 className='title'>Loading..</h2>
                 : <ItemDetail {...item}/>
             }
         </div>
