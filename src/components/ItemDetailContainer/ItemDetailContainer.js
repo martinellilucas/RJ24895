@@ -5,6 +5,7 @@ import { db } from '../../firebase/config';
 import { ItemDetail } from '../ItemDetail/ItemDetail';
 import { ProductBar } from '../ProductBar/ProductBar';
 import './ItemDetailContainer.scss'
+import cargando  from '../itemListContainer/cargando.gif'
 
 export const ItemDetailContainer = () => {
 
@@ -16,13 +17,15 @@ export const ItemDetailContainer = () => {
     useEffect ( () => {
         setLoading(true)
         //1-armo la referencia
-        const itemRef = doc (db,'productos', itemId)
+        const itemRef = doc (db,"productos", itemId)
         //2-pido la ref al doc
         getDoc(itemRef)
-            .then((resp)=>{
-               setItem(resp.data())
+            .then((doc)=>{
+               setItem({id: doc.id, ...doc.data()})
             })
-            .finally(() => setLoading(false))
+            .finally(() => {
+                setLoading(false)   
+            })
             
     }, [itemId])
 
@@ -31,7 +34,12 @@ export const ItemDetailContainer = () => {
              <ProductBar/>
             {
                 loading
-                ? <h2 className='title'>Loading..</h2>
+
+                ? <>
+                    <h2 className='title'>Loading..</h2>
+                    <img src={cargando} alt='cargando'/>
+                  </>
+                    
                 : <ItemDetail {...item}/>
             }
         </div>

@@ -6,7 +6,7 @@ import { CartContext } from '../CartContext/CartContext'
 import { Link } from 'react-router-dom'
 
 
-export const ItemDetail = ({id, nombre, desc, precio, img, stock, categoria }) => {
+export const ItemDetail = ({id, nombre, desc, precio, img, stock }) => {
    
    const [cantidad, setCantidad] = useState (0)
 
@@ -16,19 +16,18 @@ export const ItemDetail = ({id, nombre, desc, precio, img, stock, categoria }) =
 
        if (cantidad === 0) return
        
-       if ( !isInCart (id) ){
+       if ( !isInCart(id) ){
            
            const addItem = {
                id, nombre, precio, stock, cantidad
            }
            agregarAlCarrito(addItem)
-
        }
    }
    
     return (
-        <div>
 
+        <div>
             <Card style = {{ width: '18rem',
                             marginTop: '10px',
                             marginLeft: '500px'      
@@ -54,7 +53,14 @@ export const ItemDetail = ({id, nombre, desc, precio, img, stock, categoria }) =
                                 counter={cantidad}
                                 setCounter={setCantidad}
                             />
-                            <button style={{marginLeft:'35px'}} onClick={handleAgregar} className='my-button'>Agregar al carrito</button>
+                            <button 
+                                style={{marginLeft:'35px'}} 
+                                onClick={handleAgregar} 
+                                className='my-button' 
+                                disabled={cantidad === 0}
+                            >
+                                Agregar al carrito
+                            </button>
                           </>
                     }
                 </Card.Body>

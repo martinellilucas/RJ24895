@@ -1,9 +1,8 @@
-import Button from 'react-bootstrap/Button'
-import Card from 'react-bootstrap/Card'
+import { Button, Card } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import './Item.scss'
 
-export const Item = ( {id, nombre, precio, img, stock, desc} ) => {
+export const Item = ( {id, nombre, precio, img, stock} ) => {
 
     return (
 
