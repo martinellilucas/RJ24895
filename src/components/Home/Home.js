@@ -1,5 +1,4 @@
 import React from "react";
-import { Contenedor } from "../ejemplos/Contenedor";
 import inicio1 from './inicio1.jpg';
 import inicio2 from './inicio2.jpg';
 import inicio3 from './inicio3.jpg';
@@ -23,11 +22,11 @@ export const Home = () => {
             </CarouselItem>
         </Carousel>
           
-        <Contenedor>
+        <div className="container">
             <h4 className="header my-5">Bienvenidos a Zaida® indumentaria.</h4>
             <hr/>
               <ItemListContainer/>
-        </Contenedor>
+        </div>
        </>
       
    )
