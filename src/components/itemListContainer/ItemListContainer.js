@@ -39,7 +39,7 @@ export const ItemListContainer = ( { greeting } ) => {
       })
       .finally (() => setLoading(false))
 
-  }, [catId])
+      }, [catId])
 
   return (
 
